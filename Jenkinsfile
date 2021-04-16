@@ -1,8 +1,9 @@
 pipeline {
-    agent { docker { image 'gcc:latest' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
+                sh 'echo "Hello World"'
                 sh 'gcc -o helloworld helloworld.c'
             }
         }
